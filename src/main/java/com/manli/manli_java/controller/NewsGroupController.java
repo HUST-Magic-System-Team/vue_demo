@@ -38,7 +38,6 @@ public class NewsGroupController {
     @RequestMapping(value = "list", method = RequestMethod.POST)
     public ResultBean list(HttpServletRequest request) {
         Integer userId = (Integer) request.getAttribute("userId");
-
         Map<String, Object> data = new HashMap<>();
         List<NewsGroupImpl1> list = newsGroupService.getList(userId);
         data.put("list", list);

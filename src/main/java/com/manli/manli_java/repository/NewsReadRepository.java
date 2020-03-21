@@ -11,7 +11,9 @@ public interface NewsReadRepository extends JpaRepository<NewsReadEntity, Intege
     //list
     List<NewsReadEntity> findAllByUserIdAndStatus(Integer userId, Byte status);
 
-    List<NewsReadEntity> findAllByUserIdAndStatusNot(Integer userId, Byte status);
+    default List<NewsReadEntity> findAllByUserIdAndStatusNot(Integer userId, Byte status) {
+        return null;
+    }
 
     //native query
     @Query(nativeQuery = true, value = "select concat(news.id, ',', IF(`groupId` IS NULL, -1, groupId), ',',\n" +

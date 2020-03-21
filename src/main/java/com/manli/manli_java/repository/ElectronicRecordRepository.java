@@ -1,6 +1,8 @@
 package com.manli.manli_java.repository;
 
 import com.manli.manli_java.model_auto.ElectronicRecordEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +20,7 @@ public interface ElectronicRecordRepository extends JpaRepository<ElectronicReco
     @Transactional
     @Modifying
     void deleteByUserIdAndHashName(Integer userId, String hashName);
-
+    //page
+    Page<ElectronicRecordEntity> findAllByUserIdAndStatus(Integer userId, Byte status, Pageable pageable);
 
 }

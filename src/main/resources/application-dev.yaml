@@ -39,8 +39,8 @@ spring:
 
   datasource:
     url: jdbc:mysql://mysql:3306/manli_sand?useSSL=false&characterEncoding=UTF-8&useUnicode=true&serverTimezone=GMT%2b8
-    username: XXXXXXX
-    password: XXXXXXX
+    username: root
+    password: 223345
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     # 初始化大小，最小，最大
