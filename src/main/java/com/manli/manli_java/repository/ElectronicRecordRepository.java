@@ -10,7 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 public interface ElectronicRecordRepository extends JpaRepository<ElectronicRecordEntity, Integer> {
     //find one
     ElectronicRecordEntity findOneByUserIdAndHashName(Integer userId, String hashName);
-
+    //find one by id
+    ElectronicRecordEntity findOneById(Integer id);
     //save
     @Transactional
     @Modifying
