@@ -44,7 +44,7 @@ public class MemberService {
         memberEntity.setLocation(location);
         memberEntity.setQq(qq);
         memberEntity.setAddress(address);
-        memberRepository.save(memberEntity);
+       memberRepository.save(memberEntity);
     }
 
 }

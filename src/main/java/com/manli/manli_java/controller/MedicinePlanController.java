@@ -129,7 +129,7 @@ public class MedicinePlanController {
 
         Map<String, Object> data = new HashMap<>();
         data.put("medicinePlanId", medicinePlanEntity.getId());
-        return new ResultBean(ErrorCodeEnum.OK);
+        return new ResultBean(data);
     }
 
     @RequestMapping(value = "get")
