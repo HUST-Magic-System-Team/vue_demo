@@ -7,6 +7,7 @@ import com.manli.manli_java.service.MemberService;
 import com.manli.manli_java.util.ResultBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.thymeleaf.context.IContext;
@@ -24,7 +25,7 @@ public class MemberHistorySummaryController {
     @Autowired
     MemberHistorySummaryService memberHistorySummaryService;
 
-    @RequestMapping(value = "list")
+    @RequestMapping(value = "list",method = RequestMethod.POST)
     public ResultBean list(HttpServletRequest request) {
         Integer userId = (Integer) request.getAttribute("userId");
         if (memberService.isMember(userId)) {
@@ -37,7 +38,7 @@ public class MemberHistorySummaryController {
         }
     }
 
-    @RequestMapping(value = "add")
+    @RequestMapping(value = "add",method = RequestMethod.POST)
     public ResultBean add(HttpServletRequest request,
                           @RequestParam("content") String content) {
         Integer userId = (Integer) request.getAttribute("userId");
@@ -55,7 +56,7 @@ public class MemberHistorySummaryController {
 
     }
 
-    @RequestMapping(value = "del")
+    @RequestMapping(value = "del",method = RequestMethod.POST)
     public ResultBean del(@RequestParam("summaryId") Integer summaryId,
                           HttpServletRequest request) {
         Integer userId = (Integer) request.getAttribute("userId");
@@ -75,7 +76,7 @@ public class MemberHistorySummaryController {
 
     }
 
-    @RequestMapping(value = "update")
+    @RequestMapping(value = "update",method = RequestMethod.POST)
     public ResultBean update(@RequestParam("summaryId")Integer summaryId,
                          @RequestParam("content")String content,
                          HttpServletRequest request) {
@@ -96,7 +97,7 @@ public class MemberHistorySummaryController {
 
     }
 
-    @RequestMapping(value = "read")
+    @RequestMapping(value = "read",method = RequestMethod.POST)
     public ResultBean read(@RequestParam("summaryId")Integer summaryId,
                        HttpServletRequest request) {
         Integer userId = (Integer) request.getAttribute("userId");
@@ -114,12 +115,15 @@ public class MemberHistorySummaryController {
        return  new ResultBean(ErrorCodeEnum.OK);
     }
 
-    @RequestMapping(value = "isread")
-    public String isread(@RequestParam("summaryId")Integer summaryId) {
+    @RequestMapping(value = "isread",method = RequestMethod.POST)
+    public ResultBean isread(@RequestParam("summaryId")Integer summaryId) {
         if (summaryId==null){
-
+            return new ResultBean(ErrorCodeEnum.NOT_MEMBER);
         }
-        return "json isread";
+        Boolean isread = memberHistorySummaryService.isread(summaryId);
+        Map<String ,Object> data=new HashMap<>();
+        data.put("isRead",isread);
+        return new ResultBean(data);
     }
 
 

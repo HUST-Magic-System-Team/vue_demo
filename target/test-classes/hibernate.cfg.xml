@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!--<property name="connection.url"/>-->
+    <!--<property name="connection.driver_class"/>-->
+     <!--<property name="connection.username"/>-->
+     <!--<property name="connection.password"/>-->
+     <!--DB schema will be updated if needed -->
+     <!--<property name="hbm2ddl.auto">update</property> -->
+
+    <!-- Database connection settings -->
+    <property name="connection.url">jdbc:mysql://mysql:3306/manli_sand</property>
+      <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+      <mapping class="com.manli.manli_java.model_auto.AdminManagerEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.AdminUserTokenEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.AndroidPkgEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.BadEffectEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.BadEffectTreatmentEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.CurativeEffectEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.ElectronicRecordEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.ElectronicRecordGroupEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.InterestTagEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.IosSetEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.MedicineEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.MedicineDosageEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.MedicinePlanEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.MedicineSignEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.MedicineSignElectronicRecordEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.MemberEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.MemberFollowupPlanEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.MemberHistorySummaryEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.NewsEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.NewsGroupEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.NewsReadEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.PhoneSmscodeEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.StudentEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.SuggestionEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.TakingMedicineTimeEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.TkiInstructionEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.TkiWithFoodEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.TkiWithFoodNoresultEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.TkiWithMedicineEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.TkiWithMedicineNoresultEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.UserBadEffectEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.UserCurativeEffectEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.UserCurativeEffectElectronicRecordEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.UserFollowupPlanEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.UserInfoEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.UserManliCoinDetailEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.UserMedalEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.UserRecordInfoEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.UserTaskEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.UserTkiRecordInfoEntity"/>
+      <mapping class="com.manli.manli_java.model_auto.UserTokenEntity"/>
+
+  </session-factory>
+</hibernate-configuration>

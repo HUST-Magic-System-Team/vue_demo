@@ -65,6 +65,14 @@ public class MemberHistorySummaryService {
         result.setIsread((byte) 0);
         memberHistorySummaryRepository.save(result);
     }
+    public Boolean isread(Integer summaryId){
+        MemberHistorySummaryEntity result = memberHistorySummaryRepository.findOneById(summaryId);
+        if (result.getIsread()==0){
+            return false;
+        }else {
+            return true;
+        }
+    }
 
 
 }
