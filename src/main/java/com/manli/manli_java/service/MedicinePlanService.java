@@ -13,9 +13,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Service
 public class MedicinePlanService {
@@ -115,5 +114,34 @@ public class MedicinePlanService {
     public MedicinePlanEntity getMainMedicinePlanByUserId(Integer userId) {
         Optional<MedicinePlanEntity> o = medicinePlanRepository.findOneByUserIdAndIsMainAndStatus(userId, Short.valueOf("1"), Byte.valueOf("0"));
         return o.orElse(null);
+    }
+
+    public List<String> getMainNotifyArr(Integer userId) {
+        MedicinePlanEntity result = medicinePlanRepository.findOneByUserIdAndIsMain(userId, (short) 1);
+        List<String> list = new ArrayList<>();
+        String[] notify = result.getNotify().split(",");
+        Date date = new Date();
+        SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd");
+        String format = formatter.format(date);
+        for (String data : notify) {
+            String hhmm;
+            switch (data) {
+                case "1":
+                    hhmm = "09:00";
+                    break;
+                case "2":
+                    hhmm = "12:00";
+                    break;
+                case "3":
+                    hhmm = "18:00";
+                    break;
+                default:
+                    hhmm = data;
+                    break;
+            }
+            list.add(format+" "+hhmm);
+        }
+        return list;
+
     }
 }

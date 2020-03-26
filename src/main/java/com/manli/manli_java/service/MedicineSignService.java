@@ -16,6 +16,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -176,6 +177,55 @@ public class MedicineSignService {
 
         return null;
     }
+    public List<String> getTodaySignTimeArr(Integer userId){
+        Date date=new Date();
+        java.sql.Date today=new java.sql.Date(date.getTime());
+        MedicineSignEntity result = medicineSignRepository.findOneByUserIdAndSignDateAndStatus(userId, today, Byte.valueOf("0"));
+        List<String> list = new ArrayList<>();
+        String[] notify = result.getSignTime().split(",");
+        for (String data : notify) {
+            String hhmm;
+            switch (data) {
+                case "1":
+                    hhmm = "09:00";
+                    break;
+                case "2":
+                    hhmm = "12:00";
+                    break;
+                case "3":
+                    hhmm = "18:00";
+                    break;
+                default:
+                    hhmm = data;
+                    break;
+            }
+            list.add(today+" "+hhmm);
+        }
 
+        return list;
+    }
+    //比较两个list对象不一样的地方，返回差异数据
+    public List<String> difference(List<String> notifyArr,List<String> todaySignTimeArr){
+        List<String> diffArr=new ArrayList<>();
+        for (String data:notifyArr){
+            if (!todaySignTimeArr.contains(data)){
+                diffArr.add(data);
+            }
+        }
+        return diffArr;
+    }
+    public Page<MedicineSignEntityImpl1> getHistoryListByPlan(Integer userId, Integer page, Integer size,Integer medicinePlanId) {
+        List<Sort.Order> orders = new ArrayList<>();
+        orders.add(new Sort.Order(Sort.Direction.DESC, "signDate"));
+        orders.add(new Sort.Order(Sort.Direction.DESC, "signTime"));
+        Sort sort = Sort.by(orders);
+        Pageable pageable = PageRequest.of(page, size, sort);
+
+        Page<MedicineSignEntity> pageList = medicineSignRepository.findAllByUserIdAndStatusAndMedicinePlanId(userId,Byte.valueOf("0"),pageable,medicinePlanId);
+        Page<MedicineSignEntityImpl1> pageList2 = pageList.map((MedicineSignEntity medicineSignEntity) -> {
+            return getMedicineSignEntityImpl1(medicineSignEntity);
+        });
+        return pageList2;
+    }
 
 }

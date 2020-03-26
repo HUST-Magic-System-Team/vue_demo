@@ -16,6 +16,7 @@ public interface MedicinePlanRepository extends JpaRepository<MedicinePlanEntity
     boolean existsByUserIdAndIsMainAndStatus(Integer userId, Short isMain, Byte status);
 
     boolean existsByUserIdAndMedicineAndStatus(Integer userId, String medicine, Byte status);
+    MedicinePlanEntity findOneByUserIdAndIsMain(Integer userId,Short isMain);
 
     MedicinePlanEntity findOneById(Integer medicinePlanId);
 

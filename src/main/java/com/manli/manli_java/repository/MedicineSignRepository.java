@@ -17,7 +17,7 @@ public interface MedicineSignRepository extends JpaRepository<MedicineSignEntity
 
     //find one
     MedicineSignEntity findOneByIdAndStatus(Integer medicineSignId, Byte status);
-
+    MedicineSignEntity findOneByUserIdAndSignDateAndStatus(Integer userId,Date signDate,Byte status);
     //list
     List<MedicineSignEntity> findAllByMedicinePlanIdAndSignDateAndStatus(Integer medicinePlanId, Date signDate, Byte status);
 
@@ -26,7 +26,8 @@ public interface MedicineSignRepository extends JpaRepository<MedicineSignEntity
 
     //page
     Page<MedicineSignEntity> findAllByUserIdAndStatus(Integer userId, Byte status, Pageable pageable);
-
+    //page
+    Page<MedicineSignEntity> findAllByUserIdAndStatusAndMedicinePlanId(Integer userId, Byte status, Pageable pageable,Integer medicinePlanId);
     //save
     @Modifying
     @Transactional

@@ -78,5 +78,14 @@ public class MemberFollowupPlanService {
        memberFollowupPlanRepository.save(entity);
 
    }
+   public Boolean isread(Integer planId){
+       MemberFollowupPlanEntity result = memberFollowupPlanRepository.findOneById(planId);
+       if (result.getIsread()==0){
+            return false;
+       }else {
+           return true;
+       }
+
+   }
 
 }

@@ -14,10 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @RestController
@@ -174,15 +177,59 @@ public class MedicineSignController {
     }
 
 
-    @RequestMapping(value = "shouldalert")
-    public ResultBean shouldalert() {
-        return null;
+    @RequestMapping(value = "shouldalert",method = RequestMethod.POST)
+    public ResultBean shouldalert(HttpServletRequest request) throws ParseException {
+        Integer userId = (Integer) request.getAttribute("userId");
+        List<String> notifyArr = medicinePlanService.getMainNotifyArr(userId);
+        if (notifyArr.isEmpty()){
+            return new ResultBean(ErrorCodeEnum.PRIMARY_MEDICINE_DATE_NOT_SET);
+        }
+        List<String> todaySignTimeArr = medicineSignService.getTodaySignTimeArr(userId);
+        List<String> diffArr = medicineSignService.difference(notifyArr, todaySignTimeArr);
+        boolean shouldalert=false;
+        if (!diffArr.isEmpty()){
+            List<Date> diffArr2=new ArrayList<>();
+            for (String data:diffArr){
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                Date date= (Date) formatter.parse(data);
+                diffArr2.add(date);
+            }
+            long min = Collections.min(diffArr2).getTime();
+            long now = System.currentTimeMillis();
+            if (now>min){
+                shouldalert=true;
+            }
+        }
+        Map<String,Object> data=new HashMap();
+        data.put("shouldalert",shouldalert);
+        return new ResultBean(data);
     }
 
 
-    @RequestMapping(value = "historybyplan")
-    public ResultBean historybyplan() {
-        return null;
+    @RequestMapping(value = "historybyplan",method = RequestMethod.POST)
+    public ResultBean historybyplan(@RequestParam("page")Integer page,
+                                    @RequestParam("size")Integer size,
+                                    @RequestParam("medicinePlanId")Integer medicinePlanId,
+                                    HttpServletRequest request) {
+        if (null == page || null == size) {
+            return new ResultBean(ErrorCodeEnum.MISS_PARAMETER);
+        }
+        if (page < 1) {
+            return new ResultBean(ErrorCodeEnum.MISS_PARAMETER);
+        }
+        //java的page是从第０页开始的,所以要特殊处理下
+        page = page - 1;
+
+        Integer userId = (Integer) request.getAttribute("userId");
+
+        Page<MedicineSignEntityImpl1> pageList = medicineSignService.getHistoryList(userId, page, size);
+        if (null == pageList) {
+            pageList = Page.empty();
+        }
+        Map<String, Object> data = new HashMap<>();
+        data.put("list", PageImp1.fromPage(pageList));
+
+        return new ResultBean(data);
     }
 
 

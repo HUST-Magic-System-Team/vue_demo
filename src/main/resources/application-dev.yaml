@@ -76,3 +76,8 @@ manli:
 #logging:
 #  level:
 #      org.springframework: debug
+
+hdf:
+  urlPrefix: "https://m.haodf.com/openplatform/auth"
+  partnerKey: "bd53f6143a0370cb"
+  secret: "xxx"
