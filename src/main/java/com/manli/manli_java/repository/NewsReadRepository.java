@@ -4,9 +4,10 @@ import com.manli.manli_java.model_auto.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface NewsReadRepository extends JpaRepository<NewsReadEntity, Integer> {
     //list
     List<NewsReadEntity> findAllByUserIdAndStatus(Integer userId, Byte status);

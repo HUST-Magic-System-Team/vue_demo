@@ -115,7 +115,7 @@ public class MemberFollowupPlanController {
         return new ResultBean(ErrorCodeEnum.OK);
     }
 
-    @RequestMapping(value = "isread")
+    @RequestMapping(value = "isread",method = RequestMethod.POST)
     public ResultBean isread(@RequestParam("planId") Integer planId) {
         if (planId == null) {
             return new ResultBean(ErrorCodeEnum.MISS_PARAMETER);
@@ -127,7 +127,7 @@ public class MemberFollowupPlanController {
     }
 
 
-    @RequestMapping(value = "shouldalert")
+    @RequestMapping(value = "shouldalert",method = RequestMethod.POST)
     public ResultBean shouldalert(HttpServletRequest request) {
         Integer userId = (Integer) request.getAttribute("userId");
         List<MemberFollowupPlanEntityImpl1> list = memberFollowupPlanService.getList(userId);

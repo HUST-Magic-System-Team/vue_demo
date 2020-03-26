@@ -16,7 +16,7 @@ import java.util.List;
 public class MemberFollowupPlanService {
     @Autowired
     MemberFollowupPlanRepository memberFollowupPlanRepository;
-   public List<MemberFollowupPlanEntityImpl1> getList(Integer userId){
+    public List<MemberFollowupPlanEntityImpl1> getList(Integer userId){
        List<MemberFollowupPlanEntity> list = memberFollowupPlanRepository.findAllByUserIdAndStatus(userId, Byte.valueOf("0"));
        List<MemberFollowupPlanEntityImpl1> list1=new ArrayList<>();
        MemberFollowupPlanEntityImpl1 entityImpl1=new MemberFollowupPlanEntityImpl1();
@@ -49,7 +49,7 @@ public class MemberFollowupPlanService {
        return result.getId();
    }
    public boolean isForUser(Integer userId,Integer planId){
-       MemberFollowupPlanEntity result = memberFollowupPlanRepository.findOneByUserIdAndPlanAndId(userId, planId);
+       MemberFollowupPlanEntity result = memberFollowupPlanRepository.findOneByUserIdAndId(userId, planId);
        if (result==null){
            return false;
        }
