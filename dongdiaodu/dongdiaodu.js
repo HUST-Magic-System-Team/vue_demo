@@ -3,14 +3,14 @@ $(function() {
 		var $video = $(".video");
 		var $vi = $(".vi");
 		$vi.slideDown(500);
-		$video.play();
+		$video.trigger("play");
 
 	});
 	$(".vi .btn2").click(function() {
 		var $video = $(".video");
 		var $vi = $(".vi");
 		$vi.slideUp(500);
-		$video.pause()
+		$video.trigger("pause");
 
 	});
 	
