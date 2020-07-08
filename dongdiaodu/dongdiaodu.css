@@ -40,7 +40,10 @@
 	line-height: 60px;
 	float: left;
 }
-
+.nav .active{
+	color: black;
+	font-weight: bold;
+}
 .nav li {
 	margin-right: 51px;
 
@@ -64,7 +67,9 @@
 	text-align: center;
 	float: left;
 }
-
+.nav .btn1:hover{
+	background: -webkit-linear-gradient(left, #16afd5, #0fc0bc, #07d1a2);
+}
 .nav .btn2 {
 	color: white;
 	background: -webkit-linear-gradient(left, #16afd5, #0fc0bc, #07d1a2);
@@ -465,6 +470,28 @@ video {
 	right: 10px;
 	position: fixed;
 }
-.kefu img{
+.kefu .image1{
+    display: block;
     width: 190px;
+}
+#scrollUp .image2{
+   margin-top: 15px;
+	width: 30px;
+}
+.toUp{
+	bottom: 160px;
+	right: 10px;
+	position: fixed;
+	width: 190px;
+}
+#scrollUp{
+	margin: auto;
+	text-align: center;
+	background: #999;
+	border-radius: 25px;
+	width: 51px;
+	height: 50px;
+}
+#scrollUp:hover{
+	background: green;
 }
