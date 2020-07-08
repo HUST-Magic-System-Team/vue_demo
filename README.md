@@ -4,4 +4,4 @@
 
 
 
-懂调度网站预览（完成第一部分）：http://120.79.175.19:8080/dongdiaodu/index.html
+懂调度网站预览：http://120.79.175.19:8080/dongdiaodu/index.html
