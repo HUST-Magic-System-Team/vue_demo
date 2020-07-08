@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style> 
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.head{
+			background-color: white;
+		    position: fixed; 
+			height: 60px;
+			width: 100%;
+			z-index: 2;
+		}
+		.logo{
+			margin: 0 1.2% 0 2.2%;
+		}
+		.logo1{
+			float: left;
+			width: 98px;
+			height: 40px;
+			margin-top: 7px;
+		}
+		.logo2{
+			font-size: 16px;
+			margin-left: 20px;
+			line-height: 60px;
+			float: left;
+		}
+		.nav{
+						
+			float: right;
+			
+		}
+		.nav ul{
+			line-height: 60px;
+			float: left;
+		}
+		.nav li{
+			margin-right: 51px;
+
+			float: left;
+			list-style: none;
+		}
+		.nav .btn{
+			margin-right: 85px;
+			line-height: 30px;
+			float: right;
+		}
+		.nav .btn1{
+			margin: 0 10px;
+			margin-top: 15px;
+			width: 90px;
+			height: 30px;
+			border-radius: 15px;
+			border: 1px solid #999999;
+			    text-align: center;
+			float: left;
+		}
+		.nav .btn2{
+			color: white;
+			background: -webkit-linear-gradient(left, #16afd5, #0fc0bc, #07d1a2);
+			margin: 0 10px;
+			width: 90px;
+			height: 30px;
+			margin-top: 15px;
+			border-radius: 15px;
+			 border: 1px solid #999999;
+			text-align: center;
+			float: left;
+		}
+		.c1{
+			position: absolute;
+			top: 60px;
+			height: 500px;
+			width: 100%;
+			background-image: url(img/banner.png);
+			background-repeat: no-repeat;
+			background-size: 100% 500px;
+		}
+		.c1 .container{
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.5);
+		}
+		.c11{
+			color: white;
+			width: 500px;
+			height: 500px;
+			margin: auto;
+			text-align: center;
+			padding-top: 110px;
+		}
+		.c11 .text{
+			font-size: 27px;
+			font-weight: 200;
+			letter-spacing: 3px;
+			color: #d5e6ee;	
+		}
+		.c11 .title2{
+			    margin-top: 20px;
+			    margin-bottom: 20px;
+			    font-size: 40px;
+			    font-weight: normal;
+			    letter-spacing: 3px;
+			    color: #ffffff;
+		}
+		.c11 .image{
+			width: 70px;
+			height: 70px;
+			margin: 30px auto;
+			background-image: url(img/play.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+		   
+		}
+		.c11 .text1{
+			margin-top: 10px;
+			    font-weight: 200;
+			    letter-spacing: 3px;
+			    color: #ffffff;
+		}
+		.vi{
+			display: none;
+			position: fixed;
+			height: 100%;
+			width: 100%;
+		    background-color: rgba(0,0,0,0.2);
+		    z-index: 4;
+		}
+		.vid{
+			position: absolute;
+			 top: 50%;
+			 left: 50%;
+			 transform: translate(-50%, -50%);
+
+		}
+		.vi .btn2{
+			
+		    position: absolute;
+			 top: 10px;
+			 right: 10px;
+			width: 20px;
+			height: 20px;
+			z-index: 10;
+		}
+		.vi img{
+			width: 100%;
+		}
+		video{
+			width: 1000px;
+		}
+		</style>
+		<script src="js/jquery-1.12.4.js"></script>
+		<script>
+			$(function (){
+				$(".c11 .btn").click(function(){
+				    var $video = $(".video");
+					var $vi = $(".vi");
+					$vi.slideDown(500);
+				    $video.play();
+	
+				});
+				$(".vi .btn2").click(function(){
+					var $video = $(".video");
+					var $vi = $(".vi");
+					$vi.slideUp(500);
+					$video.pause()
+				
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="head">
+			<div class="logo">
+				<img src="img/logo.png"  class="logo1"/>
+				<div class="logo2">让流通更轻松</div>
+			</div>
+			<div class="nav">
+				<ul>
+					<li>
+						<a>首页</a>
+					</li>
+					<li>
+						<a>产品</a>
+					</li>
+					<li>
+						<a>关于我们</a>
+					</li>
+					<li>加盟合作</li>
+				</ul>
+				<div class="btn">
+					<div class="btn1">登录</div>
+					<div class="btn2">预约演示</div>
+				</div>
+			</div>
+		</div>
+		<div class="c1">
+		  <div class="container">
+			  <div class="c11">
+				  <div class="text">创新科技 引领未来</div>
+				  <div class="title2">城配智能调度SaaS平台</div>
+				  <div class="text">懂调度，让流通更轻松！</div>
+				  <div class="image btn"></div>
+				  <div class="text1">观看视频介绍</div>
+			  </div>
+		  </div>
+		</div>
+		<div class="vi">
+			<div class="vid">
+				<div class="btn2"><img src="img/closeVedio.png"></div>
+				
+				<video controls="controls" class="video">
+				  <source src="https://video.56etms.com/880f2db6acf543bc917d3823502144e1/44040882a20249f29df26741d6988ec1-6ac6ca554f9c2f7c8741274cdad2eff1-hd.mp4" type="video/mp4" />
+				</video>
+			</div>
+		</div>
+	</body>
+</html>
