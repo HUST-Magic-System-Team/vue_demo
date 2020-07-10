@@ -29,5 +29,22 @@ $(function() {
 		   },
 		   1500,"easeInOutExpo");
 	   })
+	$(".nav ul li").mouseenter(function(){//鼠标移入
+	    var left = $(this).children().position().left;
+	    var width = $(this).children().width();
+	    $(".bottomLine").stop().animate({
+	        left:left,
+	        width:width
+	    },500);
+	});
+	$(".nav").mouseleave(function(){
+		var left = $(".active").position().left;
+		var width = $(".active").width();
+		$(".bottomLine").stop().animate({
+		    left:left,
+		    width:width
+		},500);
+		
+	})
 
 })
