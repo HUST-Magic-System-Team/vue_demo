@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		        .navCon{
+		            min-width: 1200px;
+		            height: 43px;
+		            margin: 0 auto;
+		            position: relative;
+		        }
+		        .navCon ul li{
+		            float: left;
+		            list-style-type: none;
+		            background: #f1eeee;
+		        }
+		        .navCon ul li a{
+		            display: inline-block;
+		            padding: 10px 20px;
+		            text-decoration: none;
+		            color: red;
+		        }
+		       /* .navCon ul li:hover{
+		            background: #cacaca;
+		        } */
+		        /* .navCon ul li:hover a{
+		            color: #002A80;
+		        } */
+		        /* .navCon ul li.active{
+		            background: #cacaca;
+		            border-bottom: 2px solid #000000;
+		        } */
+		        .navCon ul li.active a{
+		            color: #002A80;
+		        }
+		        .bottomLine{
+		           
+		            height: 2px;
+		            background: black;
+		            position: absolute;
+		            bottom: 0px;
+					
+					left: 40px;
+				   width: 82px;
+		        }
+		        .clear{
+		            clear: both;
+		        }
+		    </style>
+	
+		<script src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+	    $(function(){
+			$(".navCon ul li").mouseenter(function(){//鼠标移入
+			    var left = $(this).children().position().left;
+			    var width = $(this).children().width();
+			 
+			    // $(".bottomLine").css({opacity:1})
+			    $(".bottomLine").stop().animate({
+			        left:left,
+			        width:width
+			    },500);
+			});
+			$(".navCon").mouseleave(function(){
+				// var left = $(".active").position().left;
+				// var width = $(".active").width();
+				// $(".bottomLine").css({opacity:1})
+				$(".bottomLine").stop().animate({
+				    left:40,
+				    width:82
+				},500);
+				
+			})
+			// function(){//鼠标移出        
+			//     $(".bottomLine").css({opacity:0})
+			
+			// });
+			// $(".navCon ul li").click(function(){
+			//     $(".navCon ul li").removeClass("active");
+			//     $(this).addClass("active");
+			// });
+		})
+		
+	</script> 
+		        
+	</head>
+	<body>
+		<nav class="navCon">            
+		            <ul>
+		                <li class="active"><a href="#">导航1</a></li>
+		                <li><a href="#">导航2导航2</a></li>
+		                <li><a href="#">导航3导航3导航3</a></li>
+		                <li><a href="#">导航4导航4导航4导航4</a></li>
+		                <li><a href="#">导航5导航5导航5导航5导航5</a></li>    
+		                <div class="bottomLine"></div>
+		            </ul>            
+		        </nav>
+		
+	</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*,
+			*:after,
+			*:before {
+				box-sizing: border-box;
+			}
+
+			body {
+				background: #F5F3F4;
+				margin: 0;
+				padding: 10px;
+				font-family: 'Open Sans', sans-serif;
+				text-align: center;
+			}
+
+			h1 {
+				color: #4c4c4c;
+				font-weight: 600;
+				border-bottom: 1px solid #ccc;
+			}
+
+			h2,
+			h4 {
+				font-weight: 400;
+				color: #4d4d4d;
+			}
+
+			.card {
+				display: inline-block;
+				margin: 10px;
+				background: #fff;
+				padding: 15px;
+				min-width: 200px;
+				box-shadow: 0 3px 5px #ddd;
+				color: #555;
+			}
+
+			.card .box {
+				width: 100px;
+				height: 100px;
+				margin: auto;
+				background: #ddd;
+				cursor: pointer;
+				box-shadow: 0 0 5px #ccc inset;
+			}
+
+			.card .box .fill {
+				width: 100px;
+				height: 100px;
+				position: relative;
+				background: #03A9F4;
+				opacity: .5;
+				box-shadow: 0 0 5px #ccc;
+				-webkit-transition: 0.3s;
+				transition: 0.3s;
+			}
+
+			.card p {
+				margin: 25px 0 0;
+			}
+			.translateY:hover .fill{
+				transform: translateY(-45px);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="card">
+				<div class="box translateY">
+					<div class="fill"></div>
+				</div>
+				<p>translateY(45px)</p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			body{
+				background-color: black;
+			}
+			.main{
+				width: 805px;
+				height: 320px;
+				margin: 150px auto;
+				overflow: hidden;
+			}
+			li{
+				width: 180px;
+				float: left;
+				border-left: 1px solid #FFFFFF;
+				position: relative;
+				transition: all 0.5s;
+			}
+			.flag{
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			.main:hover li{
+				width: 50px;
+			}
+			.main li:hover{
+				width: 640px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="main">
+			<li>
+				<img src="img/20100809043030402.jpg" />
+				<div class="flag">maxiaozha</div>
+			</li>
+			<li>
+				<img src="img/home-bg.jpg" />
+				<div class="flag">maxiaozha</div>
+			</li>
+			<li>
+				<img src="img/20100809043030402.jpg" />
+				<div class="flag">maxiaozha</div>
+			</li>
+			<li>
+				<img src="img/home-bg.jpg" />
+				<div class="flag">maxiaozha</div>
+			</li>
+		</ul>
+	</body>
+</html>
