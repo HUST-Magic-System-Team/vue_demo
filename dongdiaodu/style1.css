@@ -1,0 +1,371 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/*顶部导航栏*/
+.top{
+    position:fixed;
+    top: 0;
+	width: 100%;
+	height: 60px;
+	background-color: white;
+    z-index: 2;
+}
+.top-left{
+	float: left;
+	margin:3px 2% 3px 2%;
+}
+.logo{
+	width: 100px;
+	margin:6px 0 0 0;
+}
+.words{
+	width: 120px;
+	font-size: 16px;
+	line-height: 60px;
+	font-family: STKaiti;/*华文楷体*/
+	float: left;
+}
+.top-right{
+	float: right;
+	margin-right: 70px;
+	margin-top:4px;
+}
+.top-right a{
+	text-decoration: none;
+	margin: 20px 30px 14px 0;
+    line-height: 30px;
+    font-size: 16px;
+    color: #000;
+}
+.top-right a:hover{
+	color: grey;
+}
+.deep{
+    font-weight: bold;
+}
+
+.log{
+    background: white;
+    border-radius: 15px; /*椭圆*/
+    border: 1px solid #999999;
+    text-align: center;
+    margin: 13px 10px 13px 10px;
+	width: 90px;
+    height: 32px;
+}
+.log:hover{
+	color: white;
+	background: -webkit-linear-gradient(left, #16afd5, #0fc0bc, #07d1a2);
+}
+.show{
+    background: -webkit-linear-gradient(left, #16afd5, #0fc0bc, #07d1a2);
+    border-radius: 15px; /*椭圆*/
+    border: 1px solid #999999;
+    text-align: center;
+    margin: 13px 10px 13px 10px;
+	width: 90px;
+    height: 32px;
+    color: white;
+}
+/*客服二维码*/
+.kefu {
+    position: fixed;
+    right: 10px;
+    bottom: 95px;
+    width: 172px;
+    z-index: 100;
+}
+/*视频区域*/
+.video-part{
+	width: 100%;
+    height: 500px;
+    background-image: url("img/banner.png");
+    background-repeat: no-repeat;
+    background-size: 100% 500px;
+}
+.beijing{
+	width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.wenzi{
+	font: inherit;
+    text-align: center;
+    padding-top:110px;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    color: white;
+    
+    
+}
+
+.line-1{
+	text-align: center;
+    font-family: PingFang-SC-Bold,Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    color: #d5e6ee;
+}
+.line-2{
+	margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: PingFang-SC-Bold,Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+.line-3{
+	text-align: center;
+    font-family: PingFang-SC-Bold,Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    color: #d5e6ee;
+}
+.line-4{
+	margin-top: 10px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    color: #ffffff
+}
+.line-5{
+    margin-top: 20px;
+    text-align: center;
+    font-family: PingFang-SC-Bold,Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    color: #ffffff;
+
+}
+.yuyue{
+	width: 100%;
+    height: 60px;
+    z-index: 2;
+    background: -webkit-linear-gradient(left, #16afd5, #0fc0bc, #07d1a2);
+}
+.juzhong{
+    text-align: center;
+    line-height: 60px;
+    width: 650px;
+    height: 60px;
+    margin: auto;
+}
+.juzhong>div{
+    float: left;
+}
+.chengpei{
+
+    font-family: PingFang-SC-Bold,Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+.jiantou{
+	margin: 0 25px;
+    
+ 
+}
+
+.yanshi{
+	
+	width: 99px;
+    height: 36px;
+    background-color: #ffffff;
+    border-radius: 19px;
+    color: #0bc8ae;
+    font-size: 16px;
+    padding: 4px 10px;
+    margin-top: 8px;
+    margin-left: 15px;
+    line-height: 36px;
+}
+/*我们是谁？*/
+.part-1{
+    padding-bottom: 80px;
+}
+
+.part-1 .hang-1{
+    font-size: 36px;
+    padding: 50px 0 50px 0;
+    text-align: center;
+    font-family: PingFang-SC-Light;
+    color: #333333;
+    font-weight: 200;
+}
+
+.part-1 .hang-2 {
+    margin-left: 5%;
+    font-size: 18px;
+    text-align: center;
+    font-family: PingFang-SC-Light;
+    color: #666666;
+    line-height: 36px;
+}
+/*累计帮助企业*/
+.part-2{
+    height: 400px;
+    width: 100%;
+    background-image: url(img/helpCustomer.png);
+    background-repeat: no-repeat;
+    background-size: 100% 395px;
+}
+.timu{
+    text-align: center;
+    font-size: 36px;
+    padding: 50px 0 50px 0;
+    font-family: PingFang-SC-Light;
+    color: #333333;
+    font-weight: 200;
+}
+.container-2{
+    width: 1200px;
+    height: 250px;
+    padding-bottom: 50px;
+    margin: auto;
+}
+.box{
+    position: relative;
+    float: left;
+    background-color: #ffffff;
+    width: 250px;
+    border-radius: 6px;
+    margin: 10px 15px;
+    height: 180px;
+    box-shadow: 0px 2px 9px 1px rgba(192, 205, 196, 0.29);
+}
+.yi{
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 30px;
+    height: 8px;
+    border-radius: 4px;
+    background: -webkit-linear-gradient(left, #16afd5, #0fc0bc, #07d1a2);
+}
+.er{
+    position: absolute;
+    top: 54px;
+    left: 30px;
+    letter-spacing: 1px;
+    color: #666666;
+    font-family: PingFang-SC-Medium;
+    font-size: 24px;
+}
+.san{
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    font-family: PingFang-SC-Heavy;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #333333;
+}
+/*商流到物流*/
+.part-3{
+    height: 500px;
+    width: 100%;
+}
+.container-3{
+    border-bottom: 1px solid #f1f1f1;
+    width: 1200px;
+    
+    margin: auto;
+}
+.fenkuai{
+    float: left;
+    text-align: center;
+    width: 400px;
+
+}
+.one{
+    width: 30%;
+    margin: 20px 30% 20px 30%;
+}
+.two{
+    text-align: center;
+    font-size: 24px;
+    color: #333333;
+}
+.three{
+   
+    line-height: 48px;
+    color: #666666;
+}
+/*我们能做什么*/
+.part-4{
+    width: 100%;
+    margin: auto;
+}
+.container-4{
+    height: 500px;
+    width: 1200px;
+    margin: auto;
+
+}
+.picture{
+    float: left;
+    margin-left: 10%;
+}
+.wenben{
+    float: left;
+    position: relative;
+    margin-left: 100px;
+    height: 320px;
+    width: 320px;
+}
+.big{
+    margin-top: 40px;
+    font-family: PingFang-SC-Medium;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+.small{
+    font-family: PingFang-SC-Medium;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+    line-height: 32px;
+    margin-left: 30px;
+}
+.wenben li{
+    line-height: 40px;
+    margin-left: 30px;
+}
+.wenben-2{
+    float: left;
+    margin-left: 120px;
+    margin-right: 220px;
+}
+.picture-2{
+    float: left;
+    margin-left: 100px;;
+}
+.wenben-2 li{
+    line-height: 40px;
+    margin-left: 30px;
+}
+/*都在用*/
+.part-5{
+    background-color: #f5f7f8;
+    height: 800px;
+    width: 100%;
+}
+.last{
+    width: 1000px;
+    margin: auto;
+}
+.photo{
+    width: 180px;
+    height: 120px; 
+}
