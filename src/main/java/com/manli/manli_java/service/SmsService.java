@@ -39,7 +39,7 @@ public class SmsService {
     @Transactional
     public void sendSmsCode(String phone, String smscode) {
         Client client = Client.create();
-        client.addFilter(new HTTPBasicAuthFilter("api", "key-084089172f0ab387e4a35d2dc666271b"));
+        client.addFilter(new HTTPBasicAuthFilter("api", "key-12345678901234567890"));
         WebResource webResource = client.resource("http://sms-api.luosimao.com/v1/send.json");
         MultivaluedMapImpl formData = new MultivaluedMapImpl();
         formData.add("mobile", phone);
