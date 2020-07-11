@@ -38,7 +38,7 @@ spring:
     store-type: redis
 
   datasource:
-    url: jdbc:mysql://localhost:3306/manli_sand?useSSL=false&characterEncoding=UTF-8&useUnicode=true&serverTimezone=GMT%2b8
+    url: jdbc:mysql://100.100.100.100:3306/manli_sand?useSSL=false&characterEncoding=UTF-8&useUnicode=true&serverTimezone=GMT%2b8
     username: root
     password: 223345
     driver-class-name: com.mysql.cj.jdbc.Driver
