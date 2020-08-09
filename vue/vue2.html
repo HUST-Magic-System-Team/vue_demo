@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 响应式列表 -->
+<div id="mag">
+	<ul>
+		<li v-for="item in table">{{item}}</li>
+	</ul>
+</div>
+
+<script src="vue.js"></script>
+<script>
+	const mag = new Vue({
+		el:'#mag',
+		data:{
+			table:['one','two','three']
+		}
+	})
+</script>
+
+</body>
+</html>

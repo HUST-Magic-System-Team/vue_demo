@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.come{
+			color: orange;
+		}
+	</style>
+</head>
+<body>
+<!-- 列表click效果 -->
+<div id="mag">
+	<ul>
+		<li v-for="(item,index) in table" 
+		:class="{come:current === index}" @click="liClick(index)">
+		{{index}}.{{item}}</li>
+	</ul>
+</div>
+
+<script src="vue.js"></script>
+<script>
+	const mag = new Vue({
+		el:'#mag',
+		data:{
+			table:['one','two','three'],
+			current:0
+		},
+		methods:{
+			liClick(index){
+				this.current=index
+			}
+		}
+	})
+</script>
+
+</body>
+</html>

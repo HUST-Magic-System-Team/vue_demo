@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 管理元素 (声明式)-->
+<div id="mag">{{message}}</div>
+
+<div>{{message}}</div>
+
+<script src="vue.js"></script>
+<script>
+	const mag = new Vue({
+		el:'#mag',  //挂载要管理的元素
+		data:{  //定义数据
+			message:'Hello,World！'
+		}
+	})
+</script>
+
+</body>
+</html>

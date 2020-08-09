@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 计数器 -->
+<div id="mag">
+	<div>计数：{{begin}}</div>
+	<!-- <button v-on:click="begin++">+</button>
+	<button v-on:click="begin--">-</button> -->
+	<button v-on:click="up">+</button>
+	<button v-on:click="down">-</button>
+</div>
+
+
+
+<script src="vue.js"></script>
+<script>
+	const mag = new Vue({
+		el:'#mag',
+		data:{
+			begin:0
+		},
+
+		methods:{
+			up:function(){
+				console.log('up被执行');
+				this.begin++
+			},
+			down:function(){
+				console.log('down被执行');
+				this.begin--
+			}
+		}
+	})
+</script>
+
+</body>
+</html>
