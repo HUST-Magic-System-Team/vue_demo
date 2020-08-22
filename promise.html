@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--回调地狱-->
+<!--    ajax(url1,function(res1){-->
+<!--        console.log(res1)-->
+<!--        ajax(url2,function(res2){-->
+<!--            console.log(res1,res2);-->
+<!--            ajax(url3,function(res3){-->
+<!--                console.log(res1,res2,res3);-->
+<!--            })-->
+<!--        })-->
+<!--    })-->
+
+<script>
+<!--    链式-->
+    new Promise((resolve , reject) => {
+        //第一次请求
+        setTimeout(() => {
+
+
+            resolve()
+        },1000)
+        setTimeout(() => {
+
+            reject('err')
+
+        },900)
+    }).then(()=> {
+        //第一次拿到处理结果
+        console.log('good !!!');
+        console.log('good !!!');
+        console.log('good !!!');
+
+        return new Promise((resolve , reject)=> {
+            //第二次请求
+            setTimeout(() => {
+                // resolve ()
+                // reject('err')
+            }, 1000)
+        })
+    }).then(()=> {
+        //第二次拿到处理结果
+        console.log('better !!!');
+        console.log('better !!!');
+        console.log('better !!!');
+
+        return new Promise((resolve , reject)=> {
+            //第三次请求
+            setTimeout(() => {
+                resolve()
+            }, 1000)
+        })
+    }).then(()=> {
+        //第三次拿到处理结果
+        console.log('best !!!');
+        console.log('best !!!');
+        console.log('best !!!');
+    })
+.catch(err => {
+        console.log(err);
+    })
+
+</script>
+</body>
+</html>
